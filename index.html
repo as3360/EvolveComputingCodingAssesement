@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#submitBtn").click(function(){
+        $.ajax({
+          type: "POST",
+          url: "reverse.php",
+          data: { input: $("#inputField").val() },
+          success: function(data){
+            alert(data);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class= "text-center">Aryan's String Reverser</h1>
+    <div class="form-group">
+      <label for="inputField">Enter a string:</label>
+      <input type="text" class="form-control" id="inputField">
+    </div>
+    <button class="btn btn-primary" id="submitBtn">Reverse</button>
+  </div>
+</body>
+</html>
